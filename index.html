@@ -34,6 +34,24 @@
                 }
 
             ]
+            
+            // função arrow
+            inicializarLoja = () => {
+                var containerProdutos = document.getElementById('produtos');
+                items.map((val)=>{
+                    containerProdutos.innerHTML+=`
+                        <div class="produto-single">
+                            <img src="`+val.img+`" />
+                            <p>`+val.nome+` </p>
+                            <a key""`+val.id+`"></a>
+                        </div>    
+                    
+                    `;
+
+                })
+            }
+
+
         </script>
     </body>
 </html>
