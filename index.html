@@ -10,6 +10,12 @@
                 padding: 0 2%;
                 display: flex;
             }
+            #carrinho{
+                max-width:900px ;
+                margin: 0 auto;
+                padding: 0 2%;
+                display: block;
+            }
             .produto-single{
                 width:33.3%;
                 padding:0 20px;
@@ -71,6 +77,7 @@
 
             atualizarCarrinho = () =>{
                 var containerCarrinho = document.getElementById('carrinho');
+                containerCarrinho.innerHTML = "";
                 items.map((val)=>{
                     if(val.quantidade > 0){
                         containerCarrinho.innerHTML+=`
