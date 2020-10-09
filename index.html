@@ -17,15 +17,18 @@
             }
         </style>
     </head>
-
-    <body>
+     <body>
+        <h2>Vitrine:</h2>
         <div id="produtos">
-            <h2>Vitrine:</h2>
+            
         </div><!--produtos-->
 
+       
+        <h2>Carrinho:</h2>
         <div id="carrinho">
-            <h2>Carrinho:</h2>
+
         </div><!-- carinho-->
+
         <script>
             const items = [
                 {
@@ -57,7 +60,7 @@
                         <div class="produto-single">
                             <img src="`+val.img+`" />
                             <p>`+val.nome+` </p>
-                            <a key""`+val.id+`" href="#">Adicionar ao carrinho</a>
+                            <a key="`+val.id+`" href="#">Adicionar ao carrinho</a>
                         </div>    
                     
                     `;
@@ -68,9 +71,10 @@
 
             atualizarCarrinho = () =>{
                 console.log(items);
-            }
+                }
 
-            var links = document.getElementsByName('a');
+             var links = document.getElementsByTagName('a');
+
             for (var i = 0; i < links.length; i++){
                 links[i].addEventListener("click",function(){
                     let key = this.getAttribute('key');
