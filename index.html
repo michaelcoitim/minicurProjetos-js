@@ -3,12 +3,13 @@
         <title>Loja virtual com Js</title>
         <meta charset="utf-8"/>
         <style>
-            #produtos,
-            #carrinho{
+           
+            #produtos{
                 max-width:900px ;
                 margin: 0 auto;
                 padding: 0 2%;
                 display: flex;
+                flex-wrap: wrap;
             }
             #carrinho{
                 max-width:900px ;
@@ -17,20 +18,56 @@
                 display: block;
             }
             .produto-single{
-                width:33.3%;
-                padding:0 20px;
+                width:32%;
+                margin-right:1%;
+                border:1px solid #ccc;
+                margin-top: 20px;
+                margin-bottom: 20px;
 
             }
+            .produto-single p {
+                text-align: center;
+                font-size: 16px;
+                padding: 10px;
+            }
+            .produto-single a{
+                text-decoration: none;
+                color: white;
+                background-color: teal;
+                text-align: center;
+                display: block;
+                padding: 10px 0;
+            }
+            .produto-single img{
+                max-width: 100%;
+            }
+            .info-single-checkout{
+                border-bottom: 2px dotted;
+                padding: 10px 0;
+            }
+            h2{
+                background-color:#4c3282;
+                padding:10px 0;
+                text-align: center;
+                color: whitesmoke;
+            }
+            @media screen and(max-width: 768px){
+                .produto-single{
+                    width:100%;
+                    margin-right:0;
+                }
+            }
+
         </style>
     </head>
      <body>
-        <h2>Vitrine:</h2>
+        <h2>Vitrine</h2>
         <div id="produtos">
             
         </div><!--produtos-->
 
        
-        <h2>Carrinho:</h2>
+        <h2>Carrinho</h2>
         <div id="carrinho">
 
         </div><!-- carinho-->
@@ -81,8 +118,12 @@
                 items.map((val)=>{
                     if(val.quantidade > 0){
                         containerCarrinho.innerHTML+=`
-                            <p>`+val.nome+` | quantidade: `+val.quantidade+`</p>
-                            <hr>
+                            <div class="info-single-checkout">
+                            <p style="float:left;">Produto: `+val.nome+`</p>
+                            <p style="float:right;">Quantidade: `+val.quantidade+`</p>
+                            <div style="clear:both"></div>
+                            
+                            </div>
                             
                         `;
                     }
